@@ -5,6 +5,7 @@
   --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
   --Grayish-Blue: hsl(212, 23%, 69%);
   --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  --white: hsl(255, 100%, 100%);
   --font-family-Manrope: "Manrope", sans-serif;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
@@ -21,30 +22,99 @@ body {
   justify-content: center;
   align-items: center;
   font-family: var(--font-family-Manrope);
+  background-color: var(--Light-Grayish-Blue);
 }
 
+.container {
+  width: 100%;
+  max-width: 731px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--white);
+
+}
+.left-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 10px 0 0 10px;
+}
+
+.right-side {
+  padding: 32px 40px;
+}
+h2 {
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+.right-side > p{
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: var(--Desaturated-Dark-Blue);
+  font-weight: var(--font-weight-regular);
+  line-height: 19px;
+}
+button{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+}
+button:hover, button:active{
+  cursor: pointer;
+  background-color: var(--Very-Dark-Grayish-Blue);
+}
+.share-icon:hover {
+  filter: brightness(0) invert(1);
+}
+#michelle-image {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 16.75px;
+}
+.author {
+  display: flex;
+  align-items: center;
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+  margin-right:137px ;
+}
+.author-info p {
+  color: var(--Desaturated-Dark-Blue);
+}
 h3{
   font-size: 13px;
   text-transform: uppercase;
   color: var(--Desaturated-Dark-Blue);
   letter-spacing: 5px;
 }
-
+h4{
+  color: var(--Very-Dark-Grayish-Blue);
+}
 
 .share-bar {
+  --scale:1;
+  --translateX: -50%;
+  --translateY: 0;
+  bottom: calc(100% + 28px);
+  left: 50%;
+  transform: translate(var(--translateX), var(--translateY)), scale(var(--scale));
     background-color:  hsl(217, 19%, 35%);
-    position: relative;
+    position: absolute;
     border-radius: 20px;
     padding: 17.5px 37px;
-    display: inline-flex;
+    display: none;
     justify-content: space-around;
     width: 248px;
     align-items: center;
-
 }
-
-img{
-    object-fit: contain;
+.active {
+  display: inline-flex;
 }
 .share-bar:after {
   content: '';
